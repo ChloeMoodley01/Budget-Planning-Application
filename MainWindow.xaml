@@ -1,0 +1,150 @@
+﻿<Window x:Class="BudgetApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BudgetApp"
+        mc:Ignorable="d"
+        Title="Budget Planning App" Height="772" Width="1106" ResizeMode="NoResize" WindowState="Maximized">
+    <Grid Margin="10">
+
+        <!--columns to spilt page-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--rows to spilt page-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--color for heading (Microsoft, 2021)-->
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="DarkOrange" Offset="0.0" />
+                    <GradientStop Color="Yellow" Offset="0.25" />
+                    <GradientStop Color="Orange" Offset="0.75" />
+                    <GradientStop Color="DarkOrange" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!--Text-->
+        <TextBlock Text="Budget Planning App" 
+                   Grid.ColumnSpan="4" 
+                   Foreground="OrangeRed" 
+                   FontFamily="Arial" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   FontSize="100">
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    ShadowDepth="7"
+                    Direction="180"
+                    Color="FloralWhite"
+                    Opacity="0.9"
+                    BlurRadius="2"></DropShadowEffect>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <!--(Dreamstime, 2021), list reference in pdf-->
+        <Image Source="https://thumbs.dreamstime.com/z/wallet-full-money-flat-cartoon-illustration-colorful-vector-use-any-design-147363655.jpg" 
+               Height="70" 
+               VerticalAlignment="Center" 
+               Margin="0 0 850 0" 
+               Opacity="0.6" 
+               Grid.Row="0" 
+               Grid.ColumnSpan="4"/>
+
+        <!--labels and textboxs (Stack Overflow, 2021)-->
+        <TextBlock Text="Please Input Details:" 
+                   TextDecorations="Underline" 
+                   Foreground="black" 
+                   FontFamily="Arial" 
+                   VerticalAlignment="Top" 
+                   Margin="250 50 0 0" 
+                   FontSize="20" 
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Row="2"  
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="2"
+                    Margin="200 0 0 0">
+            <TextBlock Text=" "/>
+            <Label Content="Please Insert your User Name." Height="35" HorizontalAlignment="left"/>
+            <TextBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left"
+                     x:Name="user"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3"  
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="2"
+                    Margin="200 0 0 0">
+            <TextBlock Text=" "/>
+            <Label Content="Please Insert your Password." Height="35" HorizontalAlignment="left"/>
+            <!--password text box (C# WPF Tutorial 8- How to use to a PasswordBox in WPF (with Login Window), 2013)-->
+            <PasswordBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left"
+                     x:Name="password"/>
+                
+        </StackPanel>
+
+
+        <TextBlock Grid.Row="1" Text=" "/>
+
+        <!--button-->
+        <Button Content="LOGIN" 
+                x:Name="login" 
+                Background="Orange" 
+                BorderBrush="White"
+                BorderThickness="2"
+                Foreground="White" 
+                FontFamily="Arial" 
+                Height="50"
+                Width="100" 
+                Margin="0 0 120 0" 
+                FontSize="20" 
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Click="submit_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <StackPanel Grid.Row="1" 
+                    Grid.Column="2" 
+                    Grid.ColumnSpan="3" 
+                    Grid.RowSpan="5">
+
+            <!--(Davies, 2020), list refernece in pdf-->
+            <Image Source="https://cdn.app.compendium.com/uploads/user/8cae7864-8129-4f90-831f-58f1a01c3e5e/60b3624a-ca2d-4418-ac2b-a3997bb708a0/File/321b9813b3ad85c01cf851b8ecea1016/gettyimages_1020258462.jpg" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"
+                   Height="600" 
+                   Width="800" 
+                   Opacity="10"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

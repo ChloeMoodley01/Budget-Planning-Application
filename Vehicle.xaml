@@ -1,0 +1,176 @@
+﻿<Window x:Class="BudgetApp.Vehicle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BudgetApp"
+        mc:Ignorable="d"
+        Title="Vehicle" Height="450" Width="800" ResizeMode="NoResize" WindowState="Maximized" Background="#FFD68A">
+    <Grid>
+        <!--columns to spilt page-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--rows to spilt page-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--color for heading (Microsoft, 2021)-->
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="DarkOrange" Offset="0.0" />
+                    <GradientStop Color="#FFD68A" Offset="0.25" />
+                    <GradientStop Color="#FFD68A" Offset="0.75" />
+                    <GradientStop Color="DarkOrange" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!--Text-->
+        <TextBlock Text="Vehicle" 
+                   Grid.ColumnSpan="4" 
+                   Foreground="White" 
+                   FontFamily="Arial" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   FontSize="100">
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    ShadowDepth="7"
+                    Direction="180"
+                    Color="Black"
+                    Opacity="0.9"
+                    BlurRadius="2"></DropShadowEffect>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <!--labels and textboxs (Stack Overflow, 2021)-->
+        <TextBlock Text="Please Input Vehicle Details Below:" 
+                   TextDecorations="Underline" 
+                   Foreground="black" 
+                   FontFamily="Arial" 
+                   VerticalAlignment="Top" 
+                   Margin="200 10 0 0" 
+                   FontSize="20" 
+                   Grid.Row="1" 
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"/>
+
+        <StackPanel Grid.Row="1" 
+                   Grid.Column="1"
+                   Grid.RowSpan="5"
+                    Grid.ColumnSpan="3"
+                    Margin="200 40 0 0">
+
+            <TextBlock Text=" "/>
+            <Label Content="Please insert the Model and Make of your vehicle" 
+                   Height="35" 
+                   HorizontalAlignment="left"/>
+            <TextBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left" 
+                     x:Name="modelmake"/>
+
+            <TextBlock Text=" "/>
+            <Label Content="Please insert the Price of your vehicle" 
+                   Height="35" 
+                   HorizontalAlignment="left"/>
+            <TextBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left" 
+                     x:Name="vehprice"/>
+
+            <TextBlock Text=" "/>
+            <Label Content="Please insert the Deposit of your vehicle" 
+                   Height="35" 
+                   HorizontalAlignment="left"/>
+            <TextBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left" 
+                     x:Name="vehdeposist"/>
+
+            <TextBlock Text=" "/>
+            <Label Content="Please insert the Interest (in percentage) of your vehicle" 
+                   Height="35" 
+                   HorizontalAlignment="left"/>
+            <TextBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left" 
+                     x:Name="vehinterest"/>
+
+            <TextBlock Text=" "/>
+            <Label Content="Please insert the Estimated Insurance Premium of your Vehicle" 
+                   Height="35" 
+                   HorizontalAlignment="left"/>
+            <TextBox BorderThickness="3" 
+                     BorderBrush="Orange" 
+                     Height="25" 
+                     Width="250" 
+                     HorizontalAlignment="left" 
+                     x:Name="vehinsurance"/>
+
+            <Label Content="Please select yes if you want to save, else select no" 
+                   Height="35" 
+                   HorizontalAlignment="left"/>
+
+            <!--combobox (C-sharpcorner, 2021)-->
+            <ComboBox Grid.Row="2"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="1"
+                  Width="250"
+                  Height="30"
+                  HorizontalAlignment="Left"
+                  Name="ComboBox"
+                  BorderThickness="3" 
+                  BorderBrush="Orange">
+                <ComboBoxItem Content="Yes" x:Name="yes"/>
+                <ComboBoxItem Content="No" x:Name="no"/>
+            </ComboBox>
+
+        </StackPanel>
+
+
+        <!--button-->
+        <Button Content="NEXT" 
+                x:Name="next" 
+                Grid.Row="4"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="3"
+                Background="Orange" 
+                BorderBrush="White"
+                BorderThickness="2"
+                Foreground="White" 
+                FontFamily="Arial" 
+                Height="50"
+                Width="100" 
+                Margin="280 70 0 0" 
+                FontSize="20" 
+
+                Click="next_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
